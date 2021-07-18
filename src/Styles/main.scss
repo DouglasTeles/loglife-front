@@ -118,6 +118,7 @@ main{
 }
 
 .form-cadastro{
+    margin-top: 90px;
     background-image: linear-gradient(rgb(206, 221, 245), rgb(226, 242, 245));
     width:50%;
         .field{
@@ -125,9 +126,11 @@ main{
         }
 
         div{
+            
             padding: 10px;
 
             input{
+                margin-top: 05px;
                 border:solid 1px;
                 border-radius:5px;
                 width:60%;
