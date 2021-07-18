@@ -10,7 +10,7 @@ function HeaderNav() {
                 
                 <div>
                 <a href="/">Início</a>
-                <a href="/cliente/cadastro">Cadastro</a>
+                <a href="/cadastro">Cadastro</a>
                 <a href="/cliente/listar">Todos os clientes</a>
                 </div>
             </nav>

@@ -13,7 +13,7 @@ function Router() {
                 <Route path='/'exact>
                     <Menu />
                 </Route>
-                <Route path='/cliente/cadastro' exact>
+                <Route path='/cadastro' exact>
                     <Cadastrar />
                 </Route>
                 <Route path='/cliente/:id/update'>
@@ -22,7 +22,7 @@ function Router() {
                 <Route path='/cliente/listar'>
                     <Listar />
                 </Route>
-                <Route path='/cliente/:id/visualizar'>
+                <Route path='/visualizar'>
                     <Visualizar />
                 </Route>
             </Switch>
