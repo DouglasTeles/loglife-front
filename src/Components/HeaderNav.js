@@ -11,7 +11,7 @@ function HeaderNav() {
                 <div>
                 <a href="/">Início</a>
                 <a href="/cadastro">Cadastro</a>
-                <a href="/cliente/listar">Todos os clientes</a>
+                <a href="/visualizar">Visualizar Clientes</a>
                 </div>
             </nav>
         </header>

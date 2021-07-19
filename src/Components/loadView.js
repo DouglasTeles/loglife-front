@@ -46,7 +46,7 @@ function loadView({
                 <label>DATA E HORA ATENDIMENTO: </label>
                 <label>{diahoraatt}</label><br /><hr/><br />
                 <label>VEÍCULOS UTILIZADOS: </label>
-                <label>{veiculoutilizado}</label><br /><br />
+                <label>{veiculoutilizado}</label><br /><hr/><br />
                 </div>
                 
             </div>

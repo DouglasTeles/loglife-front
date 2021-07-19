@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import api from '../services/api'
 
+import { Button, Form } from 'react-bootstrap';
 
 function Cadastro() {
     const [tipocliente, setTipocliente] = useState('')
@@ -77,7 +78,7 @@ function Cadastro() {
         <>
             <div className="form-cadastro">
                 <form>
-
+                <Form.Group className="mb-3" controlId="formBasicEmail">
                     <fieldset className="field">
                         <div className="select">
                             <label>Tipo de Cliente</label>
@@ -194,7 +195,8 @@ function Cadastro() {
                         </div>
                         <div className="div-horario">
                             <label>Data e hora de atendimento</label><br />
-                            <input type="text" id="sobrenome" placeholder="ano-mês-dia hr:min" onChange={e => setDiahoraatt(e.target.value)}></input>
+                            <input type="text" id="sobrenome" placeholder="ano-mês-dia hr:min" onChange={e => setDiahoraatt(e.target.value)}></input><br></br>
+                            <small>ANO / MÊS / DIA HR:MINT</small>
                         </div>
                         <div className="select-veiculo">
                             <label >Veículo Utilizado</label>
@@ -215,16 +217,17 @@ function Cadastro() {
 
                         <div className="Buttons">
                             <button className="salvar" onClick={cadastro}>Salvar</button>
-
-
+                           
+                         
                             <button className="btn-cancelar"><a href="/">Cancelar</a></button>
 
                         </div>
 
                     </fieldset>
+                    </Form.Group>  
                 </form>
             </div>
-
+            
         </>
     )
 }
