@@ -5,42 +5,56 @@ import Inputs from "./Inputs";
 import {Link} from 'react-router-dom'
 import Logo from "../assets/logo_loglife.png"
 import LoadingIcon from "../assets/loading.png";
+import Ok from "../assets/ok.png"
 
 function RegisterUser() {
   const [show, setShow] = useState(1)
-  const [username, setUsername] = useState('')
-  const [cellphone, setCellphone ] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+
   
   async function registrationHandler(e){
     e.preventDefault()
     setLoading(true)  
     try{
 
-      await api.post("sarc/user", {
+  
+    const cad =   await api.post('novousuario', {
          
-          name:username,
-          password:password,
-          cellphone:cellphone,  
-        
-        
-      })
-      alert("Cadastro salvo com sucesso!")
+          email,
+          password
+      
+      })  
+    const messagem = cad.data.message 
+    
+     if(email === null || email === ""||email===undefined){
+       alert("Email inválido")
+       setLoading(false)
+     }  
+    if(messagem === "Email já existe"){
+      alert("Já existe um cadastro com este Email!")
       setLoading(false)
-      setUsername  ('')
-      setCellphone ('')
+     
+    }else{
+      setLoading(false)
+      setEmail  ('')
       setPassword ('')
-
+      
+    }
     }    
+   
     catch(err){
       alert(err.message)
       setLoading(false)
     }
+   
   } 
+ 
 
   return (
     <main>
+      
       <div className="form-main">
         <form>
         
@@ -51,18 +65,28 @@ function RegisterUser() {
           <Inputs 
             title="E-mail" 
             type="text" 
-            state = {cellphone}
-            setState = {e =>setCellphone(e.target.value) }
+            state = {email}
+            setState = {e =>setEmail(e.target.value) }
           />
-          <p>Este será seu Usuário para Login</p>   
+          
+          <p>Este campo não pode ser vazio</p>   
           
             
           <Inputs 
-            title="Password" 
+            title="Senha" 
             type="password"
             state = {password}
             setState = {e =>setPassword(e.target.value) }
           />
+          {password.length < 8 ? 
+          <p>
+           Senha muito curta
+          </p>      
+          :
+          <p>
+           Senha válida..
+          </p> 
+          } 
 
           
 
