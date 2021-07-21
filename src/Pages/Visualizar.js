@@ -27,13 +27,14 @@ function Visualizar() {
 
     return (
         <>
-
+            
              <HeaderNav/>
              {allClients === null && <h1>Carregando...</h1>}
              {allClients === undefined && <h1>Não há clientes cadastrados...</h1>}
              {allClients && allClients.map(cliente => (
                 
                 <LoadView 
+                    id = {cliente.id}
                     tipocliente = {cliente.tipocliente}
                     situacaocliente = {cliente.situacaocliente}
                     nomecliente = {cliente.nomecliente}
@@ -49,6 +50,7 @@ function Visualizar() {
                     diahoraatt = {cliente.diahoraatt}
                     veiculoutilizado = {cliente.veiculoutilizado}
                 />
+                
              ))}
             
         </>

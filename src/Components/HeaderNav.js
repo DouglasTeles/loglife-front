@@ -19,7 +19,7 @@ function HeaderNav() {
             </nav>
            
             <Dropdown className="drop">
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                <Dropdown.Toggle variant="" id="">
                 <a><img alt="Menu" src={Menu}/></a>
                 </Dropdown.Toggle>
 

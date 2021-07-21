@@ -4,7 +4,7 @@ import api from '../services/api'
 import { Button, Form } from 'react-bootstrap';
 
 function Cadastro() {
-    const [tipocliente, setTipocliente] = useState('')
+    const [tipocliente, setTipocliente] = useState('Pessoa Física')
     const [situacaocliente, setSituacaocliente] = useState('')
     const [nomecliente, setNomecliente] = useState('')
     const [razaosobrenome, setRazaosobrenome] = useState('')
@@ -28,7 +28,6 @@ function Cadastro() {
     }
 
     async function cadastro(e) {
-        
 
         try {
             await api.post('cadastro', {
@@ -81,14 +80,11 @@ function Cadastro() {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <fieldset className="field">
                         <div className="select">
-                            <label>Tipo de Cliente</label>
-                            <select name="tipo" id="tipo"  onChange={e => setTipocliente(e.target.value)}>
-                                <option value="Pessoa Física">Pessoa Física</option>
+                            <label>Tipo de Cliente</label> <br></br>
+                            <select name="tipo" id="tipo" required onChange={e => setTipocliente(e.target.value)} >
+                                <option value="Pessoa Física" >Pessoa Física</option>
                                 <option value="Pessoa Juridíca"  >Pessoa Juridíca</option>
-                            </select>
-
-                            
-
+                            </select>                        
                         </div>
                         <div className="input-button" onChange={e => setSituacaocliente(e.target.value)}>
                             <label>Situação do Cliente:</label><br />
@@ -120,6 +116,7 @@ function Cadastro() {
                             :
 
                             <>
+                            
                                 <div className="div-fantasia" onChange={e => setNomecliente(e.target.value)}>
                                     <label>Nome Fantasia</label><br />
                                     <input type="text" id="nome-fantasia"></input>
@@ -161,7 +158,7 @@ function Cadastro() {
                             <input type="text" id="cidade" onChange={e => setCidade(e.target.value)}></input>
                         </div>
                         <div className="div-estado">
-                            <label>Estado</label>
+                            <label>Estado</label> <br></br>
                             <select name="estado" id="estado" onChange={e => setEstado(e.target.value)}>
                                 <option value="Acre">Acre</option>
                                 <option value="Alagoas">Alagoas</option>
@@ -190,10 +187,10 @@ function Cadastro() {
                                 <option value="Sergipe">Sergipe</option>
                                 <option value="Tocantins">Tocantins</option>
                                 <option value="Distrito Federal">Distrito Federal</option>
-
                             </select>
                         </div>
                         <div className="div-horario">
+                            
                             <label>Data e hora de atendimento</label><br />
                             <input type="text" id="sobrenome" placeholder="ano-mês-dia hr:min" onChange={e => setDiahoraatt(e.target.value)}></input><br></br>
                             <small>ANO / MÊS / DIA HR:MINT</small>
@@ -216,7 +213,7 @@ function Cadastro() {
                         </div>
 
                         <div className="Buttons">
-                            <button className="salvar" onClick={cadastro}>Salvar</button>
+                            <button className="salvar" type="submit" onClick={cadastro}>Salvar</button>
                            
                          
                             <button className="btn-cancelar"><a href="/">Cancelar</a></button>

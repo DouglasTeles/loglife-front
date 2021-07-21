@@ -16,7 +16,7 @@ function Router() {
                 <Route path='/cadastro' exact>
                     <Cadastrar />
                 </Route>
-                <Route path='/cliente/:id/update'>
+                <Route path='/cliente/:id/editar'>
                     <Editar />
                 </Route>
                 <Route path='/cliente/listar'>

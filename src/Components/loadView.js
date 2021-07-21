@@ -17,39 +17,42 @@ function loadView({
     veiculoutilizado,}) {
     return (
         <>
+           
             <div className="card-view">
                 <div className="resume">
                 <label>TIPO DE CLIENTE: </label>
-                <label>{tipocliente}</label><br /><hr/><br />
+                <label>{tipocliente}</label><br /><hr/>
                 <label>SITUAÇÃO DO CLIENTE: </label>
-                <label>{situacaocliente}</label><br /><hr/><br />
+                <label>{situacaocliente}</label><br /><hr/>
                 <label>NOME: </label>
-                <label>{nomecliente}</label><br /><hr/><br />
+                <label>{nomecliente}</label><br /><hr/>
                 <label>RAZÃO SOCIAL ou SOBRENOME: </label>
-                <label>{razaosobrenome}</label><br /><hr/><br />
+                <label>{razaosobrenome}</label><br /><hr/>
                 <label>CNPJ ou CPF: </label>
-                <label>{cnpjcpf}</label><br /><hr/><br />
+                <label>{cnpjcpf}</label><br /><hr/>
                 <label>E-MAIL: </label>
-                <label>{email}</label><br /><hr/><br />
+                <label>{email}</label><br /><hr/>
                 <label>TELEFONE: </label>
-                <label>{telefone}</label><br /><hr/><br />
+                <label>{telefone}</label><br /><hr/>
                 <label>CEP: </label>
-                <label>{cep}</label><br /><hr/><br />
+                <label>{cep}</label><br /><hr/>
                 <label>RUA: </label>
-                <label>{rua}</label><br /><hr/><br />
+                <label>{rua}</label><br /><hr/>
                 <label>NUMERO: </label>
-                <label>{numero}</label><br /><hr/><br />
+                <label>{numero}</label><br /><hr/>
                 <label>CIDADE: </label>
-                <label>{cidade}</label><br /><hr/><br />
+                <label>{cidade}</label><br /><hr/>
                 <label>ESTADO: </label>
-                <label>{estado}</label><br /><hr/><br />
+                <label>{estado}</label><br /><hr/>
                 <label>DATA E HORA ATENDIMENTO: </label>
-                <label>{diahoraatt}</label><br /><hr/><br />
+                <label>{diahoraatt}</label><br /><hr/>
                 <label>VEÍCULOS UTILIZADOS: </label>
-                <label>{veiculoutilizado}</label><br /><hr/><br />
+                <label>{veiculoutilizado}</label><br /><hr/>
                 </div>
-                
+               
             </div>
+        
+            
         </>
     )
 }
