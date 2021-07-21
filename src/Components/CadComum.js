@@ -42,7 +42,7 @@ function CadComum() {
                         </div>
                         <div className="div-estado">
                         <label>Estado</label>
-                        <select name="estado" id="estado"   onChange={e=>setEstado(e.target.value)}>
+                        <select name="estado" id="estado"  onChange={e=>setEstado(e.target.value)}>
                                 <option value="Acre">Acre</option>
                                 <option value="Alagoas">Alagoas</option>
                                 <option value="Amapá">Amapá</option>

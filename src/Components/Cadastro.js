@@ -21,14 +21,29 @@ function Cadastro() {
 
     
 
+    function validar(){
+        
+        if(nomecliente === ""){
+            alert("O campo Nome do Cliente é obrigatório!")
+            document.getElementById("nome-cliente").style.borderColor = "red";
+            
+            }         
+            
+            
+        }
+        
+    
 
     function loadPage(e) {
         e.preventDefault()
         
     }
-
+   
     async function cadastro(e) {
-
+        validar()
+        
+        e.preventDefault()
+        
         try {
             await api.post('cadastro', {
                 tipocliente,
@@ -46,6 +61,7 @@ function Cadastro() {
                 diahoraatt,
                 veiculoutilizado
             })
+           
             alert('Usuário cadastrado')
 
             setTipocliente('')
@@ -65,7 +81,6 @@ function Cadastro() {
 
 
         } catch (error) {
-            alert(error)
         }
 
 
