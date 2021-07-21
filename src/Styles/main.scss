@@ -20,7 +20,7 @@ body, button, input, textarea {
     display:flex;
     flex-direction:column;
     align-items:center;
-    background-color:rgb(215, 227, 247)
+    background-image: linear-gradient(#195cb95b , #031d41e1);
 }
 
 header{
@@ -91,6 +91,204 @@ header{
 
     }
 }
+  //Login
+main{
+    
+    width: 100%;
+    max-width:100%;
+    height: 250% ;
+    
+    display:flex;
+    justify-content:center;
+   
+
+    .form-main{
+        min-height: 100vh;
+        width: 50%;
+      
+        display:flex;
+        background-color: rgba(255, 0, 0, 0.013);
+        
+    }
+    @media (max-width: 550px){
+        .form-main{
+            width: 95%;
+        }
+    }
+
+    .image-logo{
+        background-color:rgba(255, 0, 0, 0);
+        
+        img{
+            height: 50px;
+        }
+    }
+
+    form{
+      
+        border:1px solid;
+        border-color: #242a31;
+        border-radius: 6px;
+        align-self: center;
+        background-image: linear-gradient(#195cb95b , #031d4178);
+        background-color: #3f78c8;
+        width: 100%;
+        height: 100%;
+        max-height: 600px;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+
+        padding:15px;
+        
+       img{
+            margin-top: 25px;
+           height: 45px;
+           margin-bottom: 10px;
+       }
+
+        h1{
+            
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;            font-size:24px;
+            font-size: 30px;
+            color:#c9d1d9;
+            font-weight: 300;
+            letter-spacing: -.5px;
+        }
+        
+        fieldset{
+            
+            width: 100%;
+            border: none; 
+            padding-top: 25px;
+            padding-bottom:35px;
+
+
+            input-field{
+                width: 100%;
+                margin:auto;
+                border: 1px solid;
+                border-color: #6c7074;
+               
+                
+                
+            }
+            label{
+                font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                padding-top: 5px;
+                padding-bottom:0.2em;
+                color:#c9d1d9;
+                font-weight: 350;
+                display: flex;
+                flex-direction:column;
+                font-size: 1em;
+            }
+
+        }
+        input{
+            
+            background-color:#0d1117;
+            width: 100%;  
+            border: 2px solid;
+            border-radius: 6px; 
+            padding: 8px 16px;
+            font-weight: 300;
+            line-height:10px;
+            color:#c9d1d9;
+            border-color:#242a31;
+
+            
+            &:hover {
+                border-color:#2191db;
+                transition: 0.6s;
+            }
+        }
+
+        button{
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1em;
+            background-color:#238636;
+            width: 100%;  
+            border: 1px solid;
+            border-color: #2ea043;
+            border-radius: 6px; 
+            cursor: pointer;
+            padding: 5px 16px;
+            font-weight: 500;
+            line-height:20px;
+            color: rgb(255, 255, 255);
+            margin-bottom:10px;
+
+            &:hover {
+                background-color:#3aaf4f;
+                transition: 0.6s;
+            }
+        }
+        label{
+                font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                padding-top: 15px;
+                padding-bottom:0.2em;
+                color:#c9d1d9;
+                font-weight: 300;
+                font-size: 1em;
+        }
+        a{
+            color:#58a6ff;
+        }
+        p{
+            font-family:Alliance No\.1,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+            color:rgb(167, 133, 41);
+            font-size:12px;
+            font-weight: 300;
+            
+          
+        }
+
+        .loading-register{
+            animation:carregando 5s infinite;
+            height:55px;
+            padding: 10px;
+        }
+        @keyframes carregando{
+        
+            100% {
+                opacity: 1;
+                transform:rotate(5turn)
+            }
+          
+        }
+
+        .linkCancel{
+            width: 100%;  
+
+            
+            .btnCancel{
+                animation:sumir 2s;
+                background-color:rgba(255, 255, 255, 0);
+                border-color:#a0322e4d;
+
+                &:hover {
+                   
+                    background-color:#e45656a6;
+                    border-color:#e93434df;
+                }
+                  
+            }
+        
+
+            
+        }
+        
+        
+
+    }
+    
+
+}
+
+
 
 main{
     
@@ -184,7 +382,7 @@ main{
 
 .form-cadastro{
     margin-top: 90px;
-    background-image: linear-gradient(rgb(175, 200, 241), rgb(226, 242, 245));
+    background-image: linear-gradient(#8092acc7 , #7dbedd);
     width:50%;
     max-width: 900px;
         .field{
@@ -201,7 +399,7 @@ main{
                 border-radius:5px;
                 width:70%;
                 max-width:900px;
-                padding: 4px;
+                padding: 6px;
                 &:focus{
                     
                     border:solid 2px;

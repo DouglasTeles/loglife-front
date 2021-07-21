@@ -79,14 +79,11 @@ function Cadastro() {
             setDiahoraatt('')
             setVeiculoutilizado('')
 
-
         } catch (error) {
         }
 
 
     }
-
-
     return (
         <>
             <div className="form-cadastro">
