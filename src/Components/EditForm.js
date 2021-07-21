@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import HeaderNav from '../Components/HeaderNav'
+import ListClient from '../Components/ListClient'
 import api from '../services/api'
-
 import { Button, Form } from 'react-bootstrap';
+import {useParams} from 'react-router-dom'
 
-function Cadastro() {
-    const [tipocliente, setTipocliente] = useState('Pessoa Física')
+
+function EditForm() {
+
+    const [tipocliente, setTipocliente] = useState('')
     const [situacaocliente, setSituacaocliente] = useState('')
     const [nomecliente, setNomecliente] = useState('')
     const [razaosobrenome, setRazaosobrenome] = useState('')
@@ -18,19 +22,51 @@ function Cadastro() {
     const [estado, setEstado] = useState('')
     const [diahoraatt, setDiahoraatt] = useState('')
     const [veiculoutilizado, setVeiculoutilizado] = useState('')
+    const {id} = useParams()
 
-    
+    useEffect(() => {
+        async function getClient(){
+            try {
+                const getOneClient = await api.get(`clientes/${id}`)
+                
+                const dataClient = getOneClient.data
+                console.log(dataClient.nomecliente)
+
+                setTipocliente(dataClient.tipocliente)
+                setSituacaocliente(dataClient.situacaocliente)
+                setNomecliente(dataClient.nomecliente)
+                setRazaosobrenome(dataClient.razaosobrenome)
+                setCnpjcpf(dataClient.cnpjcpf)
+                setEmail(dataClient.email)
+                setTelefone(dataClient.telefone)
+                setCep(dataClient.cep)
+                setRua(dataClient.rua)
+                setNumero(dataClient.numero)
+                setCidade(dataClient.cidade)
+                setEstado(dataClient.estado)
+                setDiahoraatt(dataClient.diahoraatt)
+                setVeiculoutilizado("")
+
+               
+            }
+             catch (error) {
+              alert("Não foi carregar os dados do cliente!")  
+            }
+        } getClient()
+
+    }, [])
 
 
-    function loadPage(e) {
-        e.preventDefault()
-        
+    function loadView(e) {
+        window.location.href = '/cliente/listar';
     }
+     
+   
 
-    async function cadastro(e) {
+    async function saveUpdate(e) {
 
         try {
-            await api.post('cadastro', {
+            await api.put(`cliente/${id}/update`, {
                 tipocliente,
                 situacaocliente,
                 nomecliente,
@@ -45,32 +81,17 @@ function Cadastro() {
                 estado,
                 diahoraatt,
                 veiculoutilizado
+
+
             })
-            alert('Usuário cadastrado')
-
-            setTipocliente('')
-            setSituacaocliente('')
-            setNomecliente('')
-            setRazaosobrenome('')
-            setCnpjcpf('')
-            setEmail('')
-            setTelefone('')
-            setCep('')
-            setRua('')
-            setNumero('')
-            setCidade('')
-            setEstado('')
-            setDiahoraatt('')
-            setVeiculoutilizado('')
-
-
+            alert('Usuário atulizado com sucesso!')
+            loadView()
         } catch (error) {
             alert(error)
         }
 
 
     }
-
 
     return (
         <>
@@ -80,12 +101,12 @@ function Cadastro() {
                     <fieldset className="field">
                         <div className="select">
                             <label>Tipo de Cliente</label> <br></br>
-                            <select name="tipo" id="tipo" required onChange={e => setTipocliente(e.target.value)} >
+                            <select name="tipo" id="tipo" value={tipocliente} onChange={e => setTipocliente(e.target.value)} >
                                 <option value="Pessoa Física" >Pessoa Física</option>
                                 <option value="Pessoa Juridíca"  >Pessoa Juridíca</option>
                             </select>                        
                         </div>
-                        <div className="input-button" onChange={e => setSituacaocliente(e.target.value)}>
+                        <div className="input-button" value={situacaocliente} onChange={e => setSituacaocliente(e.target.value)}>
                             <label>Situação do Cliente:</label><br />
                             <input type="radio" id="Ativo" name="situacao" value="Ativo" />
                             <label for="Ativo">Ativo</label><br />
@@ -99,16 +120,16 @@ function Cadastro() {
                             <>
                                 <div className="div-cliente" onChange={e => setNomecliente(e.target.value)}>
                                     <label>Nome do Cliente</label><br />
-                                    <input type="text" id="nome-cliente"></input>
+                                    <input type="text" id="nome-cliente" value={nomecliente}></input>
                                 </div>
 
                                 <div className="div-sobrenome" onChange={e => setRazaosobrenome(e.target.value)}>
                                     <label>Sobrenome</label><br />
-                                    <input type="text" id="sobrenome"></input>
+                                    <input type="text" id="sobrenome" value={razaosobrenome}></input>
                                 </div>
                                 <div className="div-cpf" onChange={e => setCnpjcpf(e.target.value)}>
                                     <label>CPF</label><br />
-                                    <input type="text" id="cpf"></input>
+                                    <input type="text" id="cpf" value={cnpjcpf}></input>
                                 </div>
                             </>
 
@@ -118,15 +139,15 @@ function Cadastro() {
                             
                                 <div className="div-fantasia" onChange={e => setNomecliente(e.target.value)}>
                                     <label>Nome Fantasia</label><br />
-                                    <input type="text" id="nome-fantasia"></input>
+                                    <input type="text" id="nome-fantasia" value={nomecliente}></input>
                                 </div>
                                 <div className="div-social" onChange={e => setRazaosobrenome(e.target.value)}>
                                     <label>Razão Social</label><br />
-                                    <input type="text" id="razao-social"></input>
+                                    <input type="text" id="razao-social" value={razaosobrenome}></input>
                                 </div>
                                 <div className="div-cnpj" onChange={e => setCnpjcpf(e.target.value)}>
                                     <label>CNPJ</label><br />
-                                    <input type="text" id="cnpj"></input>
+                                    <input type="text" id="cnpj" value={cnpjcpf}></input>
                                 </div>
 
                             </>
@@ -134,31 +155,31 @@ function Cadastro() {
                         }
                         <div className="div-email">
                             <label>Email</label><br />
-                            <input type="text" id="email" onChange={e => setEmail(e.target.value)}></input>
+                            <input type="text" id="email" value={email}  onChange={e => setEmail(e.target.value)}></input>
                         </div>
                         <div className="div-telefone">
                             <label>Telefone</label><br />
-                            <input type="text" id="telefone" onChange={e => setTelefone(e.target.value)}></input>
+                            <input type="text" id="telefone" value={telefone} onChange={e => setTelefone(e.target.value)}></input>
                         </div>
                         <div className="div-cep">
                             <label>CEP</label><br />
-                            <input type="text" id="cep" onChange={e => setCep(e.target.value)}></input>
+                            <input type="text" id="cep" value={cep} onChange={e => setCep(e.target.value)}></input>
                         </div>
                         <div className="div-rua">
                             <label>Rua</label><br />
-                            <input type="text" id="rua" onChange={e => setRua(e.target.value)}></input>
+                            <input type="text" id="rua" value={rua} onChange={e => setRua(e.target.value)}></input>
                         </div>
                         <div className="div-numero">
                             <label>Número</label><br />
-                            <input type="text" id="numero" onChange={e => setNumero(e.target.value)}></input>
+                            <input type="text" id="numero" value={numero} onChange={e => setNumero(e.target.value)}></input>
                         </div>
                         <div className="div-cidade">
                             <label>Cidade</label><br />
-                            <input type="text" id="cidade" onChange={e => setCidade(e.target.value)}></input>
+                            <input type="text" id="cidade" value={cidade} onChange={e => setCidade(e.target.value)}></input>
                         </div>
                         <div className="div-estado">
                             <label>Estado</label> <br></br>
-                            <select name="estado" id="estado" onChange={e => setEstado(e.target.value)}>
+                            <select name="estado" id="estado" value={estado} onChange={e => setEstado(e.target.value)}>
                                 <option value="Acre">Acre</option>
                                 <option value="Alagoas">Alagoas</option>
                                 <option value="Amapá">Amapá</option>
@@ -191,7 +212,7 @@ function Cadastro() {
                         <div className="div-horario">
                             
                             <label>Data e hora de atendimento</label><br />
-                            <input type="text" id="sobrenome" placeholder="ano-mês-dia hr:min" onChange={e => setDiahoraatt(e.target.value)}></input><br></br>
+                            <input type="text" id="sobrenome" placeholder="ano-mês-dia hr:min" value={diahoraatt} onChange={e => setDiahoraatt(e.target.value)}></input><br></br>
                             <small>ANO / MÊS / DIA HR:MINT</small>
                         </div>
                         <div className="select-veiculo">
@@ -212,10 +233,10 @@ function Cadastro() {
                         </div>
 
                         <div className="Buttons">
-                            <button className="salvar" type="submit" onClick={cadastro}>Salvar</button>
+                            <button className="salvar" type="submit" onClick={saveUpdate}>Salvar</button>
                            
                          
-                            <button className="btn-cancelar"><a href="/">Cancelar</a></button>
+                            <button className="btn-cancelar"><a href="/cliente/listar">Cancelar</a></button>
 
                         </div>
 
@@ -223,9 +244,9 @@ function Cadastro() {
                     </Form.Group>  
                 </form>
             </div>
-            
         </>
     )
+
 }
 
-export default Cadastro
+export default EditForm

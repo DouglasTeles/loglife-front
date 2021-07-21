@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap'
 import React from 'react'
 import api from '../services/api'
-
+import Cadastro from '../Components/Cadastro'
 
 
 function ListClient({
@@ -50,7 +50,7 @@ async function deleteClient(){
                 <label>RAZÃO SOCIAL ou SOBRENOME: </label>
                 <label>{razaosobrenome}</label><br /><hr/>
                 <Button variant="outline-danger" onClick={()=>{deleteClient()}}>Excluir</Button>
-                <button type="button" class="btn btn-outline-primary">Editar</button>
+                <a href={`/${id}/editar`}><button type="button" class="btn btn-outline-primary" >Editar</button></a>
                 </div>               
             </div>         
         </>

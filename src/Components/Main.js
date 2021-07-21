@@ -13,7 +13,7 @@ function Main() {
                     <a href="cliente/listar">Listar Clientes <div className="blocks"> <img className="imgcad" alt="ListarImg" src={Listar}/></div></a>
                     
                     <a href="/visualizar">Visualizar Clientes <div className="blocks"> <img className="imgcad" alt="VisualizaImg" src={Visualizar}/></div></a>
-                    <a href="/cliente/:id/update">Editar Clientes <div className="blocks"><label> <img className="imgcad" alt="EditarImg" src={Editar}/></label></div></a>
+                    <a href="/cliente/:id/editar">Editar Clientes <div className="blocks"><label> <img className="imgcad" alt="EditarImg" src={Editar}/></label></div></a>
                 
                     
                     

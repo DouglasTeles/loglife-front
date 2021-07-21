@@ -1,13 +1,14 @@
 import React from 'react'
 import HeaderNav from '../Components/HeaderNav'
+import EditForm from '../Components/EditForm'
 
 function Editar() {
     return (
         <>
              <HeaderNav/>
-            <h1>Editar</h1>
+
+             <EditForm />
         </>
     )
 }
-
 export default Editar
