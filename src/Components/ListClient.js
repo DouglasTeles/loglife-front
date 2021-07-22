@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap'
-import React from 'react'
+import React, { useState } from 'react'
 import api from '../services/api'
 import Cadastro from '../Components/Cadastro'
 
@@ -11,15 +11,22 @@ function ListClient({
     nomecliente,
     razaosobrenome,
     
-}) 
+    
+})
+ 
 {
+    const [token, setToken] = useState(localStorage.getItem('token'))
 
 
 async function deleteClient(){
     
    try {
     if (window.confirm("Deseja realmente deletar o Cliente?")) {
-        await api.delete(`cliente/${id}/delete`)
+        await api.delete(`cliente/${id}/delete`, {
+            headers:{
+                token:token
+            }
+        })
         window.alert("Exclusão realizada com sucesso!");
         window.location.reload(); 
       }

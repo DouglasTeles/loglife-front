@@ -2,10 +2,10 @@ import React from 'react'
 import HeaderNav from '../Components/HeaderNav'
 import Main from '../Components/Main'
 
-function Menu() {
+function Menu({clearToken}) {
     return (
         <>
-        <HeaderNav/>
+        <HeaderNav clearToken={clearToken}/>
         <Main/>
         </>
     )

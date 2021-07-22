@@ -7,7 +7,8 @@ import {useParams} from 'react-router-dom'
 
 
 function EditForm() {
-
+    const [token, setToken] = useState(localStorage.getItem('token'))
+    
     const [tipocliente, setTipocliente] = useState('')
     const [situacaocliente, setSituacaocliente] = useState('')
     const [nomecliente, setNomecliente] = useState('')
@@ -27,7 +28,11 @@ function EditForm() {
     useEffect(() => {
         async function getClient(){
             try {
-                const getOneClient = await api.get(`clientes/${id}`)
+                const getOneClient = await api.get(`clientes/${id}`, {
+                    headers:{
+                        token:token
+                    }
+                })
                 
                 const dataClient = getOneClient.data
                 console.log(dataClient.nomecliente)
@@ -83,6 +88,10 @@ function EditForm() {
                 veiculoutilizado
 
 
+            },{
+                headers:{
+                   token:token
+                }            
             })
             alert('Usuário atulizado com sucesso!')
             loadView()

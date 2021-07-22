@@ -20,7 +20,8 @@ body, button, input, textarea {
     display:flex;
     flex-direction:column;
     align-items:center;
-    background-image: linear-gradient(#195cb95b , #031d41e1);
+    background: rgb(18,39,144);
+    background: radial-gradient(circle, rgb(2, 7, 36) 0%, rgb(7, 38, 78) 88%);
 }
 
 header{
@@ -73,7 +74,7 @@ header{
 
         
     }
-    @media (max-width: 535px){
+    @media (max-width: 600px){
         .drop{
             display:block;
             margin:auto;
@@ -83,9 +84,6 @@ header{
         }
        .a{
            display: none;
-           
-          
-          
        }
         
 
@@ -107,7 +105,7 @@ main{
         width: 50%;
       
         display:flex;
-        background-color: rgba(255, 0, 0, 0.013);
+        
         
     }
     @media (max-width: 550px){
@@ -127,11 +125,11 @@ main{
     form{
       
         border:1px solid;
-        border-color: #426b99;
-        border-radius: 6px;
+        border-color: #20678355;
+        border-radius: 20px;
         align-self: center;
-        background-image: linear-gradient(#195cb95b , #031d4178);
-        background-color: #3f78c8;
+        background-image: linear-gradient(#ffffff10 , #fbfbfb00);
+       
         width: 100%;
         height: 100%;
         max-height: 600px;
@@ -189,19 +187,19 @@ main{
         }
         input{
             
-            background-color:#0d1117;
+            background-color:#04173169;
             width: 100%;  
             border: 2px solid;
             border-radius: 6px; 
             padding: 8px 16px;
             font-weight: 300;
             line-height:10px;
-            color:#c9d1d9;
-            border-color:#242a31;
+            color:#a9b7c5;
+            border-color:#cbd1da;
 
             
             &:hover {
-                border-color:#c8dbe7;
+                border-color:#009dff;
                 transition: 0.6s;
             }
         }
@@ -272,7 +270,7 @@ main{
             .btnCancel{
                 animation:sumir 2s;
                 background-color:rgba(255, 255, 255, 0);
-                border-color:#a0322e4d;
+                border-color:#e2302a4d;
 
                 &:hover {
                    
@@ -318,7 +316,7 @@ main{
            
             border-radius:6px;
             padding: 10px;
-            color: #031d41;
+            color: #cdd3dd;
             font-size: 20px;
             text-align: center;
             font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -329,7 +327,7 @@ main{
             
             transition:0.1s;
                 &:hover {
-                    color: #469dcf;
+                    color: #0da6ff;
                     font-size: 25px;
                 }
             
@@ -387,11 +385,14 @@ main{
 
 .form-cadastro{
     margin-top: 90px;
-    background-image: linear-gradient(#8092acc7 , #7dbedd);
+    background-image: linear-gradient(#8092ac0e , #7dbfdd26);
     width:50%;
     max-width: 900px;
         .field{
             border:none;
+        }
+        label{
+            color:rgba(255, 255, 255, 0.842);
         }
 
         div{
@@ -408,15 +409,19 @@ main{
                 &:focus{
                     
                     border:solid 2px;
-                    border-color: rgb(38, 128, 245);
+                    border-color: rgb(127, 174, 236);
                   }
                   &:hover{
                     
                     border:solid 2px;
-                    border-color: rgb(38, 128, 245);
+                    border-color: rgb(0, 148, 246);
                   }
                   
+                  
             }
+            small{
+                color:rgb(197, 193, 193);
+              }
             @media (max-width: 600px){
                 input{
                     width:100%;  

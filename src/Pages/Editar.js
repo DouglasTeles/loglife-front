@@ -2,10 +2,10 @@ import React from 'react'
 import HeaderNav from '../Components/HeaderNav'
 import EditForm from '../Components/EditForm'
 
-function Editar() {
+function Editar(clearToken) {
     return (
         <>
-             <HeaderNav/>
+             <HeaderNav clearToken={clearToken}/>
 
              <EditForm />
         </>

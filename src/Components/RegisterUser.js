@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import api from '../services/api.js'
-
+import { useHistory } from "react-router-dom";
 import Inputs from "./Inputs";
 import {Link} from 'react-router-dom'
 import Logo from "../assets/logo_loglife.png"
 import LoadingIcon from "../assets/loading.png";
-import Ok from "../assets/ok.png"
+
 
 function RegisterUser() {
   const [show, setShow] = useState(1)
@@ -13,7 +13,7 @@ function RegisterUser() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
 
-  
+  const history = useHistory()
   async function registrationHandler(e){
     e.preventDefault()
     setLoading(true)  
@@ -37,9 +37,11 @@ function RegisterUser() {
       setLoading(false)
      
     }else{
+      alert("Cadastro salvo com sucesso!")
       setLoading(false)
       setEmail  ('')
       setPassword ('')
+     
       
     }
     }    
@@ -106,7 +108,7 @@ function RegisterUser() {
           <>
          <button 
             className="saveBtn" onClick={registrationHandler}
-            >Save
+            >Salvar
           </button>
           </>
           }    

@@ -3,7 +3,8 @@ import HeaderNav from '../Components/HeaderNav'
 import LoadView from '../Components/loadView'
 import api from '../services/api'
 
-function Visualizar() {
+function Visualizar({clearToken}) {
+    const [token, setToken] = useState(localStorage.getItem('token'))
 
     const [allClients, setAllClients ] = useState(null)
     console.log(allClients)
@@ -11,7 +12,12 @@ function Visualizar() {
     useEffect(() =>{
         async function getClients(){
             try {
-                const loadedClients = await api.get('clientes')
+                const loadedClients = await api.get('clientes', 
+                    {
+                    headers:{
+                        token:token
+                    }
+                    })
                 const {data} = loadedClients
 
                 setAllClients(data)
@@ -28,7 +34,7 @@ function Visualizar() {
     return (
         <>
             
-             <HeaderNav/>
+             <HeaderNav clearToken={clearToken}/>
              {allClients === null && <h1>Carregando...</h1>}
              {allClients === undefined && <h1>Não há clientes cadastrados...</h1>}
              {allClients && allClients.map(cliente => (

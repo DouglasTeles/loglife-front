@@ -3,14 +3,20 @@ import HeaderNav from '../Components/HeaderNav'
 import ListClient from '../Components/ListClient'
 import api from '../services/api'
 
-function Listar() {
+function Listar({clearToken}) {
+    const [token, setToken] = useState(localStorage.getItem('token'))
     const [allClients, setAllClients ] = useState(null)
     console.log(allClients)
 
     useEffect(() =>{
         async function getClients(){
             try {
-                const loadedClients = await api.get('clientes')
+                const loadedClients = await api.get('clientes',{
+                    headers:{
+                        token:token
+                    }
+                })
+
                 const {data} = loadedClients
 
                 setAllClients(data)
@@ -30,7 +36,7 @@ function Listar() {
 
     return (
         <>
-             <HeaderNav/>
+             <HeaderNav clearToken={clearToken}/>
              {allClients === null && <h1>Carregando...</h1>}
              {allClients === undefined && <h1>Não há clientes cadastrados...</h1>}
              {allClients && allClients.map(cliente => (

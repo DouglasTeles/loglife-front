@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route} from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+import {useState} from 'react'
 import Menu from '../Pages/Menu'
 import Cadastrar from '../Pages/Cadastrar'
 import Editar from '../Pages/Editar'
@@ -9,29 +10,63 @@ import Login from '../Pages/Login'
 import User from '../Pages/User'
 
 function Router() {
+
+    const [token, setToken] = useState(localStorage.getItem('token'))
+    console.log(token)
+    function updateToken(t){
+        setToken(t)
+    }
+    function clearToken(e){
+        setToken(null)
+    }
+
     return (
         <BrowserRouter>
             <Switch>
                 <Route path='/'exact>
-                    <Login />
+                    {token? <Redirect to= '/menu'/> : <Redirect to = '/'/>}
+                    <Login updateToken={updateToken}/>
                 </Route>
                 <Route path='/user'>
                     <User />
                 </Route>
                 <Route path='/menu'>
-                    <Menu />
+                    {token? <Menu clearToken={clearToken} /> 
+                        :
+                        <Redirect to='/' />
+                    }
+                    
                 </Route>
                 <Route path='/cadastro'>
-                    <Cadastrar />
+                    {token?  
+                        <Cadastrar clearToken={clearToken}  />
+                    :
+                        <Redirect to='/' />
+                    }
+                   
                 </Route>
                 <Route path='/:id/editar'>
-                    <Editar />
+                    {token?  
+                        <Editar clearToken={clearToken} />
+                    :
+                        <Redirect to='/' />
+                    }
+                   
                 </Route>
                 <Route path='/cliente/listar'>
-                    <Listar />
+                    {token?  
+                       <Listar clearToken={clearToken} />
+                    :
+                        <Redirect to='/' />
+                    }
+                    
                 </Route>
                 <Route path='/visualizar'>
-                    <Visualizar />
+                    {token?  
+                       <Visualizar clearToken={clearToken} />
+                    :
+                        <Redirect to='/' />
+                    }                   
                 </Route>
             </Switch>
         </BrowserRouter>

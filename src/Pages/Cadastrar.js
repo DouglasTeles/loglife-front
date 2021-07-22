@@ -2,10 +2,10 @@ import React from 'react'
 import HeaderNav from '../Components/HeaderNav'
 import Cadastro from '../Components/Cadastro'
 
-function Cadastrar() {
+function Cadastrar({clearToken, }) {
     return (
         <>
-            <HeaderNav/>
+            <HeaderNav clearToken={clearToken}/>
             <Cadastro/>
         </>
     )

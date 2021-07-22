@@ -4,6 +4,9 @@ import api from '../services/api'
 import { Button, Form } from 'react-bootstrap';
 
 function Cadastro() {
+    const [token, setToken] = useState(localStorage.getItem('token'))
+    
+
     const [tipocliente, setTipocliente] = useState('Pessoa Física')
     const [situacaocliente, setSituacaocliente] = useState('')
     const [nomecliente, setNomecliente] = useState('')
@@ -60,9 +63,13 @@ function Cadastro() {
                 estado,
                 diahoraatt,
                 veiculoutilizado
+            }, {
+                headers:{
+                    token:token
+                }
             })
            
-            alert('Usuário cadastrado')
+            alert('Cliente cadastrado com sucesso')
 
             setTipocliente('')
             setSituacaocliente('')
@@ -80,6 +87,7 @@ function Cadastro() {
             setVeiculoutilizado('')
 
         } catch (error) {
+            alert(error)
         }
 
 

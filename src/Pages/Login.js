@@ -2,11 +2,11 @@ import React from 'react'
 import MainSection from '../Components/MainSection'
 
 
-export default function Login() {
+export default function Login({updateToken}) {
     return(
         <>
             
-            <MainSection/>
+            <MainSection updateToken = {updateToken}/>
         
         </>
     )
