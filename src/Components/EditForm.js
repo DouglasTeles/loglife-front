@@ -60,10 +60,6 @@ function EditForm() {
         } getClient()
     }, [])
 
-
-     
-   
-
     async function saveUpdate() {
         try {
             await api.put(`cliente/${id}/update`, {
@@ -104,6 +100,7 @@ function EditForm() {
 
     return (
         <>
+       
             <div className="form-cadastro">
                 <form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -253,9 +250,11 @@ function EditForm() {
                     </Form.Group>  
                 </form>
             </div>
+           
         </>
-    )
+        )
 
 }
+
 
 export default EditForm

@@ -43,7 +43,9 @@ async function deleteClient(){
 
     return (
         <>
+         
             <div className="card-view">
+            <button className="vermais"   title='Ver mais detalhes' onClick={()=>{window.location.href=`/${id}/detalhes`}}>
                 <div className="resume">
                 <label>CLIENTE ID: </label>
                 <label>{id}</label><br /><hr/>
@@ -55,10 +57,14 @@ async function deleteClient(){
                 <label>{nomecliente}</label><br /><hr/>
                 <label>RAZÃO SOCIAL ou SOBRENOME: </label>
                 <label>{razaosobrenome}</label><br /><hr/>
+                
                 <Button variant="outline-danger" onClick={()=>{deleteClient()}}>Excluir</Button>
                 <a href={`/${id}/editar`}><button type="button" class="btn btn-outline-primary" >Editar</button></a>
-                </div>               
-            </div>         
+                <a href={`/${id}/detalhes`}><button type="button" class="btn btn-outline-info" >Detalhes</button></a>
+                </div>       
+                </button>          
+            </div>   
+            
         </>
     )
 }

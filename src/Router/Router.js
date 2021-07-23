@@ -8,6 +8,7 @@ import Listar from '../Pages/Listar'
 import Visualizar from '../Pages/Visualizar'
 import Login from '../Pages/Login'
 import User from '../Pages/User'
+import Detalhes from '../Pages/Detalhes'
 
 function Router() {
 
@@ -51,8 +52,17 @@ function Router() {
                     :
                         <Redirect to='/' />
                     }
-                   
+                                      
                 </Route>
+                <Route path='/:id/detalhes'>
+                    {token?  
+                        <Detalhes clearToken={clearToken} />
+                    :
+                        <Redirect to='/' />
+                    }
+                                      
+                </Route>
+                
                 <Route path='/cliente/listar'>
                     {token?  
                        <Listar clearToken={clearToken} />

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import api from '../services/api'
 
-import { Button, Form } from 'react-bootstrap';
+import {Form } from 'react-bootstrap';
 
 function Cadastro() {
-    const [token, setToken] = useState(localStorage.getItem('token'))
+    const [token] = useState(localStorage.getItem('token'))
     
 
     const [tipocliente, setTipocliente] = useState('Pessoa Física')
