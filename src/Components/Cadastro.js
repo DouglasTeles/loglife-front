@@ -45,7 +45,7 @@ function Cadastro() {
     async function cadastro(e) {
         validar()
         
-        e.preventDefault()
+      
         
         try {
             await api.post('cadastro', {
@@ -179,6 +179,7 @@ function Cadastro() {
                         <div className="div-estado">
                             <label>Estado</label> <br></br>
                             <select name="estado" id="estado" onChange={e => setEstado(e.target.value)}>
+                                <option >Selecione</option>
                                 <option value="Acre">Acre</option>
                                 <option value="Alagoas">Alagoas</option>
                                 <option value="Amapá">Amapá</option>
@@ -230,14 +231,25 @@ function Cadastro() {
                                 <label for="moto">Moto</label>
                             </div>
                         </div>
-
                         <div className="Buttons">
-                            <button className="salvar" type="submit" onClick={cadastro}>Salvar</button>
+                            <label>Preencha todos os campos para salvar!!!</label>
+                        </div>
+                        {situacaocliente && nomecliente &&razaosobrenome&&cnpjcpf&&email&&telefone&&cep&&rua&&numero&&cidade&&estado&&diahoraatt&&veiculoutilizado&&
+                             <div className="Buttons">
+                                    <button className="salvar" type="submit" onClick={cadastro}>Salvar</button>
+                             </div>
+                        }
+
+                        
+
+                       <div className="Buttons">
+                            <button className="btn-cancelar"><a href="/">Cancelar</a></button>
+                        </div>
                            
                          
-                            <button className="btn-cancelar"><a href="/">Cancelar</a></button>
+                           
 
-                        </div>
+                       
 
                     </fieldset>
                     </Form.Group>  

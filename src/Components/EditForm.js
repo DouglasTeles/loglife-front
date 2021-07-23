@@ -58,18 +58,13 @@ function EditForm() {
               alert("Não foi carregar os dados do cliente!")  
             }
         } getClient()
-
     }, [])
 
 
-    function loadView(e) {
-        window.location.href = '/cliente/listar';
-    }
      
    
 
-    async function saveUpdate(e) {
-
+    async function saveUpdate() {
         try {
             await api.put(`cliente/${id}/update`, {
                 tipocliente,
@@ -93,13 +88,18 @@ function EditForm() {
                    token:token
                 }            
             })
-            alert('Usuário atulizado com sucesso!')
-            loadView()
+            alert("Cadastro atualizado com sucesso!")
+            loadView() 
+           
         } catch (error) {
             alert(error)
         }
 
 
+    }
+    
+    function loadView() {
+        window.location.href = '/cliente/listar';
     }
 
     return (

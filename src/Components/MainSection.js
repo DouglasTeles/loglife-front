@@ -33,6 +33,7 @@ function MainSection({updateToken}) {
       history.push('/menu')
     } catch (error) {
       alert("Erro ao acessar, tente novamente!")
+      setLoading(false) 
     }
   }
 

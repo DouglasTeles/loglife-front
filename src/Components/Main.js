@@ -9,13 +9,12 @@ function Main() {
         <>
             <main>
                 <div className="menu">
-                    <a href="/cadastro">Cadastrar Clientes  <div className="blocks"> <img className="imgcad" alt="CadastroImg" src={Cadastro}/></div></a>
-                    <a href="cliente/listar">Listar Clientes <div className="blocks"> <img className="imgcad" alt="ListarImg" src={Listar}/></div></a>
+                    <a href="/cadastro">Adicionar Clientes<div className="blocks"> <img className="imgcad" alt="CadastroImg" src={Cadastro}/></div></a>
+                    <a href="cliente/listar">Editar Clientes <div className="blocks"> <img className="imgcad" alt="VisualizaImg" src={Editar}/></div></a>
                     
                     <a href="/visualizar">Visualizar Clientes <div className="blocks"> <img className="imgcad" alt="VisualizaImg" src={Visualizar}/></div></a>
-                    <a href="/cliente/:id/editar">Editar Clientes <div className="blocks"><label> <img className="imgcad" alt="EditarImg" src={Editar}/></label></div></a>
-                
-                    
+                    {/* <a href="/cliente/:id/editar">Editar Clientes <div className="blocks"><label> <img className="imgcad" alt="EditarImg" src={Editar}/></label></div></a> */}
+                                    
                     
                 </div>
             </main>

@@ -12,7 +12,7 @@ import User from '../Pages/User'
 function Router() {
 
     const [token, setToken] = useState(localStorage.getItem('token'))
-    console.log(token)
+  
     function updateToken(t){
         setToken(t)
     }

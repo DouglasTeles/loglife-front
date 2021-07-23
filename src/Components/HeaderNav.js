@@ -7,8 +7,6 @@ import Logo from '../assets/logo_loglife.png'
 
 function HeaderNav({clearToken}) {
 
-    const history = useHistory()
-
     function logout(e){
             localStorage.clear()
             clearToken()
@@ -21,7 +19,8 @@ function HeaderNav({clearToken}) {
 
                 <div>
                     <a className="a" href="/menu">Início</a>
-                    <a className="a"  href="/cadastro">Cadastro</a>
+                    <a className="a"  href="/cadastro">Adicionar Clientes</a>
+                    <a className="a"  href="/cliente/listar">Editar Clientes</a>
                     <a className="a"  href="/visualizar">Visualizar Clientes</a>
                     <a className="a"  onClick={logout}>Sair</a>
                 </div>
@@ -35,7 +34,8 @@ function HeaderNav({clearToken}) {
 
                 <Dropdown.Menu>
                     <Dropdown.Item href="/menu">Início</Dropdown.Item>
-                    <Dropdown.Item href="/cadastro">Cadastro</Dropdown.Item>
+                    <Dropdown.Item href="/cadastro">Adicionar Clientes</Dropdown.Item>
+                    <Dropdown.Item href="/cliente/listar">Lista de Clientes</Dropdown.Item>
                     <Dropdown.Item href="/visualizar">Visualizar Clientes</Dropdown.Item>
                     <Dropdown.Item onClick={logout}>Sair</Dropdown.Item>
                 </Dropdown.Menu>

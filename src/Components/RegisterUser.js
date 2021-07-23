@@ -38,6 +38,7 @@ function RegisterUser() {
      
     }else{
       alert("Cadastro salvo com sucesso!")
+      history.push('/')
       setLoading(false)
       setEmail  ('')
       setPassword ('')

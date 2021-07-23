@@ -10,10 +10,8 @@ function ListClient({
     situacaocliente, 
     nomecliente,
     razaosobrenome,
-    
-    
 })
- 
+
 {
     const [token, setToken] = useState(localStorage.getItem('token'))
 
@@ -38,6 +36,7 @@ async function deleteClient(){
     catch (error) {
     alert(error)
    }
+
     
 }
     
