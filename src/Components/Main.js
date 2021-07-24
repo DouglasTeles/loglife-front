@@ -1,6 +1,5 @@
 import React from 'react'
 import Cadastro from '../assets/cadastro.png'
-import Listar from '../assets/Listar.png'
 import Visualizar from '../assets/Visualizar.png'
 import Editar from '../assets/Editar.png'
 

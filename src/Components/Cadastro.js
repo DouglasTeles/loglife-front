@@ -37,11 +37,6 @@ function Cadastro() {
         
     
 
-    function loadPage(e) {
-        e.preventDefault()
-        
-    }
-   
     async function cadastro(e) {
         validar()
         

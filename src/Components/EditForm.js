@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import HeaderNav from '../Components/HeaderNav'
-import ListClient from '../Components/ListClient'
+
 import api from '../services/api'
-import { Button, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import {useParams} from 'react-router-dom'
 
 

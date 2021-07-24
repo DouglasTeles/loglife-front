@@ -8,7 +8,7 @@ import LoadingIcon from "../assets/loading.png";
 
 
 function RegisterUser() {
-  const [show, setShow] = useState(1)
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)

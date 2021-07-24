@@ -1,5 +1,4 @@
-import { Dropdown, Button } from 'react-bootstrap'
-import { useHistory } from 'react-router-dom'
+import { Dropdown } from 'react-bootstrap'
 import React from 'react'
 import Menu from '../assets/drop.png'
 import Logo from '../assets/logo_loglife.png'
@@ -22,14 +21,14 @@ function HeaderNav({clearToken}) {
                     <a className="a"  href="/cadastro">Adicionar Clientes</a>
                     <a className="a"  href="/cliente/listar">Editar Clientes</a>
                     <a className="a"  href="/visualizar">Visualizar Clientes</a>
-                    <a className="a"  onClick={logout}>Sair</a>
+                    <a href="#/" className="a"  onClick={logout}>Sair</a>
                 </div>
                 
             </nav>
            
             <Dropdown className="drop">
                 <Dropdown.Toggle variant="" id="">
-                <a><img alt="Menu" src={Menu}/></a>
+                <a href="#/" ><img alt="Menu" src={Menu}/></a>
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>

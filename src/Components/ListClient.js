@@ -1,7 +1,6 @@
 import { Button } from 'react-bootstrap'
 import React, { useState } from 'react'
 import api from '../services/api'
-import Cadastro from '../Components/Cadastro'
 
 
 function ListClient({
@@ -13,7 +12,7 @@ function ListClient({
 })
 
 {
-    const [token, setToken] = useState(localStorage.getItem('token'))
+    const token  = useState(localStorage.getItem('token'))
 
 
 async function deleteClient(){
